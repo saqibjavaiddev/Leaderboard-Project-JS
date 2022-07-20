@@ -7,7 +7,7 @@ const taskBox = document.querySelector('#data');
 
 btnInsert.onclick = () => {
   const key = inputKey.value;
-  const value = inputValue.value;
+  const { value } = inputValue;
 
   if (key && value) {
     localStorage.setItem(key, value);
