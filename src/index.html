@@ -13,19 +13,19 @@
         <div class="leaderboard">
             <div class="recent-score">
                 <h3>Recent scores</h3>
-                <button id="refreshbtn">Refresh</button>
+                <input type="submit" class='refresh-btn' id="refreshbtn" value="Refresh">
             </div>
             <div class="scorecard" id="data">
-                
+
             </div>
-           
+
         </div>
         <div class="add-score">
             <h2>Add Your Score</h2>
             <form>
-                <input type="text" placeholder="Your Name" id="myname" required>
-                <input type="number" placeholder="Your Score" id="myscore" required>
-                <button id="addscore">Submit</button>
+                <input type="text" name="user-name" placeholder="Your Name" id="myname" required>
+                <input type="number" name="user-score" placeholder="Your Score" id="myscore" required>
+                <input id="addscore" type="submit" value="Submit" />
             </form>
         </div>
     </div>
