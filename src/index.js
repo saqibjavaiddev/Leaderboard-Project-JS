@@ -1,29 +1,45 @@
 import './style.css';
+import { createGame, getUsersData, createUserData } from './leaderboard.js';
 
-const inputKey = document.getElementById('myname');
-const inputValue = document.getElementById('myscore');
-const btnInsert = document.getElementById('addscore');
-const taskBox = document.querySelector('#data');
+const refreshButton = document.getElementById('refreshbtn');
 
-btnInsert.onclick = () => {
-  const key = inputKey.value;
-  const { value } = inputValue;
+const loadScores = async () => {
+  const scoresDisplay = document.getElementById('data');
 
-  if (key && value) {
-    localStorage.setItem(key, value);
+  while (scoresDisplay.firstChild) {
+    scoresDisplay.removeChild(scoresDisplay.firstChild);
   }
-};
-let li = '';
-for (let i = 0; i < localStorage.length; i += 1) {
-  const key = localStorage.key(i);
-  const value = localStorage.getItem(key);
-  li += `<div id="score">
-            <p>${key} :</p>
-            <p> ${value}</p>
-          </div>`;
-}
 
-if (localStorage.length === 0) {
-  li += '<center>No Scores to Display</center>';
-}
-taskBox.innerHTML = li;
+  const usersData = await getUsersData();
+
+  usersData.result.forEach((entry) => scoresDisplay.insertAdjacentHTML('beforeend', `
+    <div id="score">
+    <p>${entry.user}:</p><p> ${entry.score}</p></div>  
+  `));
+};
+
+refreshButton.addEventListener('click', loadScores);
+
+const userDataSubmit = document.getElementById('addscore');
+
+userDataSubmit.addEventListener('click', async () => {
+  let userName = document.getElementById('myname').value;
+  let userScore = document.getElementById('myscore').value;
+  if (userName !== '' && userScore !== '') {
+    const data = {
+      user: userName,
+      score: userScore,
+    };
+
+    await createUserData(data);
+
+    userName = '';
+    userScore = '';
+  }
+  loadScores();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  createGame(`Game created at: ${new Date()}`);
+  loadScores();
+}); 
