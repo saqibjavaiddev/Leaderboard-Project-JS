@@ -3,7 +3,7 @@ import './style.css';
 const inputKey = document.getElementById('myname');
 const inputValue = document.getElementById('myscore');
 const btnInsert = document.getElementById('addscore');
-const taskBox = document.querySelector("#data") ;
+const taskBox = document.querySelector('#data');
 
 btnInsert.onclick = () => {
   const key = inputKey.value;
@@ -13,7 +13,7 @@ btnInsert.onclick = () => {
     localStorage.setItem(key, value);
   }
 };
-let li = "";
+let li = '';
 for (let i = 0; i < localStorage.length; i += 1) {
   const key = localStorage.key(i);
   const value = localStorage.getItem(key);
@@ -23,8 +23,7 @@ for (let i = 0; i < localStorage.length; i += 1) {
           </div>`;
 }
 
-if (localStorage.length==0) {
-  li += `<center>No Scores to Display</center>`;
+if (localStorage.length === 0) {
+  li += '<center>No Scores to Display</center>';
 }
 taskBox.innerHTML = li;
-
