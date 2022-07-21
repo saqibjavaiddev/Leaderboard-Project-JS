@@ -6,7 +6,9 @@ const refreshButton = document.getElementById('refreshbtn');
 const loadScores = async () => {
   const scoresDisplay = document.getElementById('data');
 
-  
+  while (scoresDisplay.firstChild) {
+    scoresDisplay.removeChild(scoresDisplay.firstChild);
+  }
 
   const usersData = await getUsersData();
 
