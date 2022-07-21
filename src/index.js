@@ -9,7 +9,7 @@ const loadScores = async () => {
   const usersData = await getUsersData();
 
   usersData.result.forEach((entry) => scoresDisplay.insertAdjacentHTML('beforeend', `
-    <div id="score">
+    <div id="score" class="dflex">
     <p>${entry.user}:</p><p> ${entry.score}</p></div>  
   `));
 };

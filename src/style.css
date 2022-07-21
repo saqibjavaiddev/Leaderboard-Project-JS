@@ -17,12 +17,11 @@ h1 {
   width: 40%;
 }
 
-.recent-score {
-  display: flex;
+#recent-score {
   justify-content: space-between;
 }
 
-.recent-score h3 {
+#recent-score h3 {
   font-size: 32px;
 }
 
@@ -32,17 +31,19 @@ h1 {
 }
 
 #score {
-  display: flex;
   height: 30px;
   padding: 10px 0 27px 10px;
+}
+
+.dflex {
+  display: flex;
 }
 
 #score:nth-child(even) {
   background-color: #e2dede;
 }
 
-.container {
-  display: flex;
+#marginl {
   margin-left: 50px;
 }
 
@@ -70,7 +71,7 @@ h1 {
   padding: 10px;
 }
 
-.recent-score input[type=submit],
+#recent-score input[type=submit],
 .add-score form input[type=submit] {
   margin-left: auto;
   width: 20%;
