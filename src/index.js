@@ -6,14 +6,10 @@ const refreshButton = document.getElementById('refreshbtn');
 const loadScores = async () => {
   const scoresDisplay = document.getElementById('data');
 
-  while (scoresDisplay.firstChild) {
-    scoresDisplay.removeChild(scoresDisplay.firstChild);
-  }
-
   const usersData = await getUsersData();
 
   usersData.result.forEach((entry) => scoresDisplay.insertAdjacentHTML('beforeend', `
-    <div id="score">
+    <div id="score" class="dflex">
     <p>${entry.user}:</p><p> ${entry.score}</p></div>  
   `));
 };
