@@ -26,15 +26,6 @@ h1 {
   font-size: 32px;
 }
 
-.recent-score button {
-  outline: none;
-  color: black;
-  background: #fff;
-  padding: 5px;
-  box-shadow: 2px 5px;
-  cursor: pointer;
-}
-
 .scorecard {
   margin-top: 5%;
   border: 3px solid black;
@@ -79,7 +70,7 @@ h1 {
   padding: 10px;
 }
 
-.add-score form button {
+.add-score form input[type=submit], .recent-score input[type=submit] {
   margin-left: auto;
   width: 20%;
   outline: none;
@@ -88,4 +79,12 @@ h1 {
   padding: 5px;
   box-shadow: 2px 5px;
   cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  outline: none;
+  color: #fff;
+  background: black;
+  padding: 15px;
 }
