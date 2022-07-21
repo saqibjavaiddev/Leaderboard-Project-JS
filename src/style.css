@@ -71,8 +71,8 @@ h1 {
   padding: 10px;
 }
 
-#recent-score input[type=submit],
-.add-score form input[type=submit] {
+.add-score form input[type=submit],
+#recent-score input[type=submit] {
   margin-left: auto;
   width: 20%;
   outline: none;
