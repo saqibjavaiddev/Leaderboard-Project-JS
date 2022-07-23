@@ -2,7 +2,7 @@
 
 # Leaderboard Project JS
 
-> The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
+> Leaderboard website displays scores submitted by different players. It also allows you to submit your score using form. All data is preserved thanks to the external Leaderboard API service.Developed using JavaScript and Webpack.
 
 
 ## Built With
